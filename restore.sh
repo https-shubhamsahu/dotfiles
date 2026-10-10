@@ -5,7 +5,7 @@
 #
 #   bash restore.sh                         finds the SSD backup by itself
 #   bash restore.sh /path/to/linux-migration
-#   bash restore.sh --with-models           also copy the ~98 GB Hugging Face model cache
+#   bash restore.sh --with-models           also copy the ~32 GB Hugging Face model cache
 set -uo pipefail
 
 WITH_MODELS=0; SRC=""
@@ -140,8 +140,18 @@ fc-cache -f >/dev/null
 step "8/8  Model cache"
 if ((WITH_MODELS)); then
   "${RS[@]}" "$SRC/cache/huggingface/" "$HOME/.cache/huggingface/"
+  # Windows robocopy skips symlinks; the backup recorded them (path <TAB> relative target).
+  if [[ -f "$SRC/cache/huggingface-symlinks.tsv" ]]; then
+    while IFS=$'\t' read -r link target; do
+      target=${target%$'\r'}
+      [[ -z "$link" ]] && continue
+      mkdir -p "$(dirname "$HOME/.cache/huggingface/$link")"
+      ln -sfn "$target" "$HOME/.cache/huggingface/$link"
+    done < "$SRC/cache/huggingface-symlinks.tsv"
+    echo "  recreated $(wc -l < "$SRC/cache/huggingface-symlinks.tsv") model-cache symlinks"
+  fi
 else
-  echo "  Skipped. The ~98 GB Hugging Face cache stays on the SSD; re-run with --with-models to copy it."
+  echo "  Skipped. The ~32 GB Hugging Face cache stays on the SSD; re-run with --with-models to copy it."
 fi
 
 echo
