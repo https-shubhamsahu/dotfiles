@@ -1,0 +1,11 @@
+# GUI apps and CLIs you used on Windows (see docs/app-map.md for what replaced what).
+google-chrome            # AUR; Claude in Chrome, Figma, WhatsApp/NotebookLM as web apps
+visual-studio-code-bin   # AUR; Microsoft build, same extension marketplace
+zed                      # light editor for everyday editing
+obs-studio
+vlc
+inkscape
+solaar                   # Logitech mouse/keyboard (replaces Logi Options+)
+rquickshare-bin          # AUR; Android Quick Share (replaces Windows Quick Share)
+supabase-bin             # AUR; Supabase CLI
+google-cloud-cli         # AUR; gcloud

@@ -1,0 +1,4 @@
+# earlyoom: when free RAM < 5% AND free swap < 10%, kill the worst offender before the desktop freezes.
+# Prefers builds/renders/browsers/emulator, never the desktop itself.
+# No spaces inside the regexes: systemd splits this variable on whitespace.
+EARLYOOM_ARGS="-r 3600 -m 5 -s 10 --prefer (^|/)(java|qemu-system-x86_64|chrome|chromium|electron|node|python3?)$ --avoid (^|/)(niri|Xwayland|xwayland-satellite|systemd|sddm|greetd|foot|kitty|alacritty|ghostty|pipewire|wireplumber|qs|quickshell)$"

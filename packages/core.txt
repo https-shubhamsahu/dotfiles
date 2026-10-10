@@ -1,0 +1,67 @@
+# Always installed. Repo vs AUR is detected automatically.
+
+# base dev
+base-devel
+git
+git-lfs
+github-cli
+openssh
+rsync
+curl
+wget
+jq
+unzip
+zip
+7zip
+ripgrep
+fd
+fzf
+btop
+fastfetch
+man-db
+
+# languages / runtimes (Node comes from mise, pinned to 24 like Windows)
+jdk17-openjdk
+jdk21-openjdk
+mise
+uv
+python
+python-pip
+rustup
+go
+deno
+clang
+cmake
+ninja
+pkgconf
+gtk3            # flutter linux desktop target
+
+# media
+ffmpeg
+
+# containers (Docker Engine, no Docker Desktop VM eating 6 GB)
+docker
+docker-compose
+docker-buildx
+
+# cloud CLIs
+cloudflared
+
+# memory + laptop
+earlyoom
+zram-generator
+nvidia-prime    # prime-run: send one app to the RTX 4060
+android-udev    # adb sees your phone without root
+fwupd
+
+# niri desktop plumbing
+xwayland-satellite         # X11 apps (Android Studio, some Electron) under niri
+xdg-desktop-portal-gnome   # screen sharing / recording under niri
+xdg-desktop-portal-gtk
+wl-clipboard
+foot                       # ~10 MB RAM terminal
+
+# fonts
+noto-fonts
+noto-fonts-emoji
+ttf-jetbrains-mono-nerd

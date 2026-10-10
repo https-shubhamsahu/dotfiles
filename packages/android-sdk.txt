@@ -1,0 +1,13 @@
+# Same SDK pieces as C:\Users\shubh\AppData\Local\Android\Sdk. Gradle downloads anything else it needs.
+platform-tools
+build-tools;36.0.0
+build-tools;36.1.0
+build-tools;37.0.0
+platforms;android-36
+platforms;android-36.1
+platforms;android-37.0
+ndk;28.2.13676358
+cmake;3.22.1
+# The emulator costs 2-4 GB RAM while running; test on your phone over USB instead.
+# emulator
+# system-images;android-36;google_apis;x86_64

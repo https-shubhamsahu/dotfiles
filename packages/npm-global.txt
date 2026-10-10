@@ -1,0 +1,13 @@
+# Global npm tools from Windows (npm ls -g). Supabase CLI comes from AUR instead (npm global is unsupported).
+@google/gemini-cli
+@mariozechner/pi-coding-agent
+@ollama/pi-web-search
+@openai/codex
+cf
+figma-developer-mcp
+firebase-tools
+omniroute
+opencode-ai
+ui-ux-pro-max-cli
+vercel
+yarn

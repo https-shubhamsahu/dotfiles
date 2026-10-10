@@ -1,0 +1,13 @@
+# Big apps you had on Windows. Skipped with --lean. Open them only when needed: each one is RAM.
+android-studio           # AUR; Flutter builds don't need it (SDK comes from bootstrap)
+blender
+freecad
+kicad
+kicad-library
+libreoffice-fresh
+cura-bin                 # AUR; UltiMaker Cura
+arduino-ide-bin          # AUR
+arduino-cli
+brave-bin                # AUR; second browser
+dotnet-sdk
+ollama-cuda              # you had OLLAMA_* settings on Windows
