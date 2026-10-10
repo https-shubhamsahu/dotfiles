@@ -103,6 +103,7 @@ if have npm; then
   npm config set fund false
   npm config set update-notifier false
   list "$KIT/packages/npm-global.txt" | xargs -r npm install -g || warn "npm globals (see log)"
+  mise reshim   # puts gemini, firebase, vercel ... on PATH via ~/.local/share/mise/shims
 fi
 rustup default stable >/dev/null || warn "rustup default stable"
 if ((WITH_ML)); then
