@@ -15,6 +15,7 @@ https://github.com/https-shubhamsahu/dotfiles
 | `secrets/` | Play upload keystores + `key.properties`, all `.env` files, Android debug key, your API-key environment variables. **This drive is not encrypted: keep it safe.** |
 | `configs/` | `~/.claude` (memory, skills, plugins, settings), `.claude.json`, Codex/Gemini/Supabase/MCP-auth/HyperFrames configs, VS Code + OBS settings, fonts |
 | `cache/huggingface` | Your ~32 GB of downloaded models (MusicGen, faster-whisper, Qwen3-TTS, Chatterbox, MossFormer2), so you don't re-download them |
+| `pendrive-backup/` | Everything that was on the SanDisk pen drive before Ventoy erased it (41 GB) |
 | `inventory/` | Every Windows program, store app, npm/pip package, VS Code extension and Android SDK piece |
 | `installer/` | CachyOS ISO (260809) + Ventoy 1.1.18, both **checksum-verified** |
 | `linux-setup/` | `bootstrap.sh` (installs everything), `restore.sh` (puts your stuff back). Also on GitHub as the private repo `https-shubhamsahu/dotfiles` |
@@ -35,7 +36,7 @@ https://github.com/https-shubhamsahu/dotfiles
 
 7. Restart. While it boots, tap **F2** to open the BIOS.
    - Press **F7** (Advanced Mode) → **Security** → **Secure Boot** → **Secure Boot Control: Disabled**.
-   - If you see **Advanced → VMD setup menu → Enable VMD controller**, set it to **Disabled** (otherwise Linux can't see the disk; Windows is being wiped anyway).
+   - **Required on your laptop (VMD is on):** **Advanced → VMD setup menu → Enable VMD controller → Disabled**. Otherwise the installer can't see the internal disk. Windows may stop booting after this, which is fine.
    - **F10** to save and exit.
 8. While it restarts, tap **Esc** → pick the **USB / UEFI pen drive** entry → Ventoy menu → **cachyos-desktop-linux-260809.iso** → **Boot in normal mode** → first CachyOS entry.
 9. In the live desktop, connect **Wi-Fi**, then in **CachyOS Hello** click **Launch Installer**.
