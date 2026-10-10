@@ -1,8 +1,8 @@
 # dotfiles: CachyOS + niri setup
 
 Rebuilds my dev machine (ASUS TUF F15 FX507VV, 16 GB RAM, RTX 4060) on CachyOS with niri,
-tuned to stop out-of-memory freezes: zram swap, earlyoom, socket-activated Docker, capped Gradle,
-desktop on the Intel GPU with `prime-run` for the RTX 4060.
+tuned to stop out-of-memory freezes: zram swap, earlyoom, socket-activated Docker,
+desktop on the Intel GPU with `prime-run` for the RTX 4060. Gradle memory limits stay per-project.
 
 ```bash
 bash bootstrap.sh          # packages, toolchains (Flutter, Android SDK, JDK 21/17, Node 24, Rust, Go), Claude Code
@@ -14,7 +14,7 @@ bash restore.sh <backup>   # projects, secrets, Claude memory/settings, configs 
 | `bootstrap.sh` | Re-runnable installer; `--lean` skips heavy apps, `--with-ml` builds the CUDA Python venv |
 | `restore.sh` | Restores a `linux-migration/` backup; rewrites Windows paths (git worktrees, Claude config, MCP servers) |
 | `packages/` | pacman/AUR lists (auto-detected), npm globals, VS Code extensions, Android SDK pieces, Python tools |
-| `config/` | earlyoom, zram fallback, journald cap, 80% charge limit, Gradle limits, session environment |
+| `config/` | earlyoom, zram fallback, journald cap, 80% charge limit, Gradle defaults, session environment |
 | `lib/` | Windows → Linux path fixers for JSON configs and Claude project folders |
 | `docs/app-map.md` | What replaced each Windows app |
 
